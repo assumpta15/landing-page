@@ -31,24 +31,28 @@ export const capabilityItems = [
   {
     index: "01",
     title: "Program & Systems Leadership",
+    outcome: "Plan to delivery",
     description:
       "Running complex, multi-team programs from planning through delivery, with clear accountability at every stage.",
   },
   {
     index: "02",
     title: "Acquisitions & Contract Strategy",
+    outcome: "Need to award",
     description:
       "Navigating government contracting and procurement with an insider's read on how decisions actually get made.",
   },
   {
     index: "03",
     title: "Aerospace Systems Integration",
+    outcome: "Interface to fielding",
     description:
       "Bridging technical teams and mission requirements so complex systems ship on spec and on time.",
   },
   {
     index: "04",
     title: "Crisis & Risk Management",
+    outcome: "Exposure to recovery",
     description:
       "Calm, decisive leadership when a program hits turbulence, because it will, and someone needs a plan.",
   },

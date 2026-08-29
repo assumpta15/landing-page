@@ -193,6 +193,46 @@ textarea:focus-visible {
   opacity: 0.4;
 }
 
+.capabilities-surface {
+  background:
+    radial-gradient(circle at 8% 42%, rgba(184, 154, 103, 0.075), transparent 26%),
+    linear-gradient(180deg, rgba(14, 25, 34, 0.88), rgba(10, 18, 25, 0.96));
+}
+
+.capabilities-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(206, 180, 130, 0.55), transparent);
+}
+
+.capability-row {
+  transition:
+    background-color 350ms ease,
+    padding-inline 350ms ease;
+}
+
+.capability-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(184, 154, 103, 0.07), rgba(255, 255, 255, 0.018) 56%, transparent);
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+
+.capability-row:hover::before {
+  opacity: 1;
+}
+
+@media (min-width: 1024px) {
+  .capability-row:hover {
+    padding-inline: 1.25rem;
+  }
+}
+
 .ambient-panel {
   background: linear-gradient(180deg, rgba(17, 30, 40, 0.82), rgba(14, 25, 34, 0.72));
   border: 1px solid rgba(255, 255, 255, 0.08);
