@@ -2,16 +2,23 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import {
   Barlow_Condensed,
+  Cormorant_Garamond,
   IBM_Plex_Mono,
   Manrope,
 } from "next/font/google";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/lib/constants";
 import "./globals.css";
 
-const headingFont = Barlow_Condensed({
-  variable: "--font-heading",
+const displayFont = Barlow_Condensed({
+  variable: "--font-display",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
+});
+
+const editorialFont = Cormorant_Garamond({
+  variable: "--font-editorial",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 const bodyFont = Manrope({
@@ -82,7 +89,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable} bg-background text-foreground antialiased`}
+        className={`${displayFont.variable} ${editorialFont.variable} ${bodyFont.variable} ${monoFont.variable} bg-background text-foreground antialiased`}
       >
         {children}
       </body>

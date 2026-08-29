@@ -13,7 +13,7 @@ export function CapabilityCard({ item }: { item: CapabilityItem }) {
         </p>
         <span className="h-px flex-1 bg-gradient-to-r from-white/10 via-gold-light/40 to-white/0" />
       </div>
-      <h3 className="mt-5 max-w-[12ch] font-[family-name:var(--font-heading)] text-[2rem] leading-none text-foreground sm:text-[2.4rem]">
+      <h3 className="mt-5 max-w-[12ch] font-[family-name:var(--font-display)] text-[2rem] font-semibold uppercase leading-none text-foreground sm:text-[2.4rem]">
         {item.title}
       </h3>
       <p className="body-copy mt-5 text-base transition-colors duration-300 group-hover:text-foreground/92">

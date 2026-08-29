@@ -17,7 +17,7 @@ export function Capabilities() {
         <div className="grid gap-10 lg:grid-cols-[minmax(240px,0.52fr)_minmax(0,1fr)] lg:gap-20">
           <div>
             <Reveal>
-              <SectionLabel label="Mission Capabilities" />
+              <SectionLabel label="Capabilities / 04" />
             </Reveal>
             <Reveal delay={0.08}>
               <p className="technical-label mt-8 max-w-[24rem] leading-[1.8] text-foreground/55">
@@ -28,8 +28,13 @@ export function Capabilities() {
 
           <div>
             <Reveal delay={0.08}>
-              <h2 className="section-title max-w-[13ch]">
-                The work between strategy and execution.
+              <h2 className="capabilities-title max-w-[14ch] text-foreground">
+                <span className="block font-[family-name:var(--font-display)] text-[clamp(2.7rem,5vw,5rem)] font-semibold uppercase leading-[0.88] tracking-[-0.02em]">
+                  Where experience
+                </span>
+                <span className="mt-1 block font-[family-name:var(--font-editorial)] text-[clamp(3.2rem,5.8vw,6rem)] font-normal leading-[0.9] tracking-[-0.025em] text-gold-light">
+                  makes the difference.
+                </span>
               </h2>
             </Reveal>
             <Reveal delay={0.14}>
@@ -52,12 +57,12 @@ export function Capabilities() {
                   <p className="font-mono text-xs uppercase tracking-[0.24em] text-foreground/38">
                     Area
                   </p>
-                  <p className="mt-2 font-mono text-2xl text-gold-light lg:text-3xl">
+                  <p className="mt-2 font-mono text-2xl text-foreground/32 transition-colors duration-300 group-hover:text-gold-light lg:text-3xl">
                     {item.index}
                   </p>
                 </div>
 
-                <h3 className="max-w-[16ch] font-[family-name:var(--font-heading)] text-[2rem] leading-[0.98] tracking-[-0.025em] text-foreground transition-transform duration-500 group-hover:translate-x-2 sm:text-[2.5rem]">
+                <h3 className="max-w-[16ch] font-[family-name:var(--font-display)] text-[2rem] font-semibold uppercase leading-[0.98] tracking-[-0.015em] text-foreground transition-transform duration-500 group-hover:translate-x-2 sm:text-[2.5rem]">
                   {item.title}
                 </h3>
 

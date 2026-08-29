@@ -1,25 +1,32 @@
-import { ArrowDownRight, ShieldCheck } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { BearingMark } from "@/components/ui/BearingMark";
+import { MediaReveal } from "@/components/ui/MediaReveal";
+import { PortraitFrame } from "@/components/ui/PortraitFrame";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionLabel } from "@/components/ui/SectionLabel";
-import { heroStats } from "@/lib/data";
+
+const heroDisciplines = [
+  "Program leadership",
+  "Systems integration",
+  "Executive advisory",
+];
 
 export function Hero() {
   return (
     <section id="top" className="hero-surface site-shell min-h-screen pt-28 md:pt-32">
-      <div className="hero-designation pointer-events-none absolute right-6 top-28 hidden text-right lg:block">
-        <p className="font-mono text-[0.6rem] uppercase tracking-[0.28em] text-foreground/24">
+      <div className="hero-designation pointer-events-none absolute right-8 top-28 hidden text-right xl:block">
+        <p className="font-mono text-[0.58rem] uppercase tracking-[0.26em] text-foreground/24">
           Independent advisory / 001
         </p>
-        <p className="mt-2 font-mono text-[0.6rem] uppercase tracking-[0.28em] text-foreground/24">
+        <p className="mt-2 font-mono text-[0.58rem] uppercase tracking-[0.26em] text-foreground/24">
           Defense systems / acquisition / command
         </p>
       </div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
 
-      <div className="section-shell flex min-h-[calc(100vh-7rem)] flex-col justify-end gap-14 pb-10">
-        <div className="grid items-end gap-12 pb-5 pt-20 lg:grid-cols-[minmax(0,1.4fr)_minmax(320px,0.6fr)] lg:gap-16">
-          <div className="max-w-[900px]">
+      <div className="section-shell flex min-h-[calc(100vh-7rem)] flex-col justify-end gap-12 pb-10">
+        <div className="grid items-center gap-12 pb-4 pt-16 lg:grid-cols-[minmax(0,1.15fr)_minmax(340px,0.7fr)] lg:gap-16 xl:gap-24">
+          <div className="max-w-[840px]">
             <Reveal>
               <div className="mb-8 flex items-center gap-4">
                 <span className="h-8 w-px bg-gold-light" />
@@ -30,8 +37,9 @@ export function Hero() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <h1 className="editorial-title max-w-[11ch] text-foreground">
-                Command clarity for mission-critical programs.
+              <h1 className="hero-title max-w-[11ch] text-foreground">
+                <span className="hero-title-serif block">Command experience.</span>
+                <span className="hero-title-sans mt-1 block">Contractor results.</span>
               </h1>
             </Reveal>
 
@@ -49,7 +57,7 @@ export function Hero() {
                   Request a Private Briefing
                 </Button>
                 <Button href="#service-record" variant="secondary">
-                  Review Credentials
+                  View Service Record
                 </Button>
               </div>
             </Reveal>
@@ -61,55 +69,36 @@ export function Hero() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.28}>
-            <aside className="executive-panel relative overflow-hidden px-6 py-7 sm:px-7">
-              <div className="flex items-center justify-between">
-                <SectionLabel label="Engagement Profile" />
-                <ShieldCheck className="text-gold-light" size={18} />
-              </div>
-              <p className="mt-8 font-[family-name:var(--font-heading)] text-7xl font-semibold leading-none text-foreground">
-                32<span className="ml-2 text-2xl text-gold-light">YRS</span>
-              </p>
-              <p className="mt-3 font-mono text-[0.65rem] uppercase tracking-[0.22em] text-foreground/45">
-                Command and operational service
-              </p>
-
-              <div className="mt-8 space-y-4">
-                {heroStats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="border-t border-white/10 pt-4 first:border-t-0 first:pt-0"
-                  >
-                    <p className="technical-label text-foreground/52">
-                      {stat.label}
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-foreground/84">
-                      {stat.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </aside>
-          </Reveal>
+          <MediaReveal
+            delay={0.18}
+            className="mx-auto w-full max-w-[480px] lg:mx-0 lg:justify-self-end"
+          >
+            <PortraitFrame />
+          </MediaReveal>
         </div>
 
         <Reveal delay={0.38}>
-          <div className="hero-assurance-bar grid border-y border-white/10 sm:grid-cols-[1fr_1fr_1fr_auto]">
-            {[
-              ["01", "Program Leadership"],
-              ["02", "Acquisition Strategy"],
-              ["03", "Systems Integration"],
-            ].map(([code, label]) => (
-              <div key={code} className="flex items-center gap-4 border-b border-white/10 px-5 py-5 sm:border-b-0 sm:border-r">
-                <span className="font-mono text-xs text-gold-light">{code}</span>
-                <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-foreground/66">
-                  {label}
-                </span>
-              </div>
-            ))}
+          <div className="hero-bearing-row grid items-stretch border-y border-white/10 md:grid-cols-[minmax(280px,0.65fr)_1fr_auto]">
+            <BearingMark
+              bearing="118"
+              label="Acquisition strategy"
+              className="min-h-40 border-b border-white/10 px-5 py-6 md:border-b-0 md:border-r"
+            />
+            <div className="grid grid-cols-2 items-center gap-x-8 gap-y-4 border-b border-white/10 px-5 py-6 md:border-b-0 md:border-r sm:grid-cols-3">
+              {heroDisciplines.map((label, index) => (
+                <div key={label}>
+                  <p className="font-mono text-[0.58rem] text-gold-light">
+                    0{index + 1}
+                  </p>
+                  <p className="mt-2 font-mono text-[0.58rem] uppercase leading-relaxed tracking-[0.16em] text-foreground/54">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
             <a
               href="#capabilities"
-              className="inline-flex items-center justify-between gap-5 px-5 py-5 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-foreground/62 hover:text-foreground"
+              className="inline-flex items-center justify-between gap-5 px-6 py-6 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-foreground/62 hover:text-foreground"
             >
               View mandate
               <ArrowDownRight size={16} />

@@ -14,7 +14,7 @@ export function Contact() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="section-title mt-6 max-w-[11ch]">
-                Start with the mission.
+                A discreet conversation starts here.
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
@@ -58,7 +58,7 @@ export function Contact() {
           </div>
 
           <Reveal delay={0.18}>
-            <div className="executive-panel p-5 sm:p-8">
+            <div className="contact-form-shell border-l border-white/10 pl-5 sm:pl-8 lg:pl-12">
               <ContactForm />
             </div>
           </Reveal>

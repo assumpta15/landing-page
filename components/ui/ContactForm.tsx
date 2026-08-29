@@ -74,7 +74,7 @@ export function ContactForm() {
       <div className="flex items-center justify-between gap-4">
         <div>
           <p className="technical-label text-gold-light">Engagement Intake / 01</p>
-          <h3 className="mt-4 font-[family-name:var(--font-heading)] text-4xl font-semibold uppercase leading-none tracking-[-0.02em] text-foreground sm:text-5xl">
+          <h3 className="mt-4 font-[family-name:var(--font-editorial)] text-4xl font-medium leading-none tracking-[-0.02em] text-foreground sm:text-5xl">
             Request a private briefing.
           </h3>
         </div>
@@ -168,7 +168,7 @@ export function ContactForm() {
           className="inline-flex min-h-14 items-center justify-center border border-[rgba(206,180,130,0.9)] bg-gold px-7 py-3 font-mono text-[0.67rem] font-medium uppercase tracking-[0.15em] text-[#071018] hover:-translate-y-0.5 hover:bg-gold-light disabled:cursor-not-allowed disabled:opacity-70"
           disabled={submitState === "submitting"}
         >
-          {submitState === "submitting" ? "Submitting..." : "Submit Enquiry"}
+          {submitState === "submitting" ? "Submitting..." : "Request Briefing →"}
         </button>
 
         <p
@@ -186,7 +186,7 @@ export function ContactForm() {
           {submitState === "error" &&
             "Something went wrong. Please try again in a moment."}
           {submitState === "idle" &&
-            "Information is handled with discretion."}
+            "Enquiries are reviewed personally. Typical response within 1–2 business days."}
           {submitState === "submitting" && "Sending enquiry..."}
         </p>
       </div>
@@ -208,7 +208,7 @@ function Field({
       <span className="technical-label mb-3 block text-foreground/56">
         {label}
       </span>
-      <span className="field-shell block rounded-[6px]">{input}</span>
+      <span className="field-shell block">{input}</span>
       {error ? <span className="mt-2 block text-sm text-[#d18f8f]">{error}</span> : null}
     </label>
   );
