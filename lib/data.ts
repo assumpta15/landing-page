@@ -60,28 +60,22 @@ export const capabilityItems = [
 
 export const experienceItems = [
   {
-    code: "A1",
+    code: "01",
     title: "Complex Program Delivery",
     description:
       "Aligning technical, operational, and executive stakeholders around measurable outcomes and a shared execution rhythm.",
   },
   {
-    code: "B2",
+    code: "02",
     title: "Government Acquisition",
     description:
-      "Understanding procurement cycles, requirements shaping, contracting realities, and institutional decision paths.",
+      "Navigating procurement cycles, requirements shaping, contracting realities, and institutional decision paths.",
   },
   {
-    code: "C3",
+    code: "03",
     title: "Systems Integration",
     description:
-      "Translating mission needs across engineering, operations, and leadership teams so delivery remains grounded in reality.",
-  },
-  {
-    code: "D4",
-    title: "Executive Advisory",
-    description:
-      "Helping leadership make clear decisions when cost, risk, and schedule start competing for the same oxygen.",
+      "Connecting mission requirements, engineering teams, and operational delivery so complex programs move forward with clarity.",
   },
 ];
 
