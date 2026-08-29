@@ -6,22 +6,21 @@ import { contactDetails } from "@/lib/data";
 export function Contact() {
   return (
     <section id="contact" className="section-spacing contact-panel relative">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-light/70 to-transparent" />
       <div className="section-shell">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] lg:gap-14">
           <div>
             <Reveal>
-              <SectionLabel label="Get in Touch" />
+              <SectionLabel label="Private Enquiries" />
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="section-title mt-6 max-w-[11ch]">
-                Let&apos;s talk strategy.
+                Start with the mission.
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
               <p className="body-copy mt-7 max-w-[30rem]">
-                Available for advisory work, program leadership roles, and
-                defense and aerospace consulting engagements.
+                For advisory mandates, program leadership, acquisition
+                strategy, and sensitive defense or aerospace engagements.
               </p>
             </Reveal>
 
@@ -59,7 +58,7 @@ export function Contact() {
           </div>
 
           <Reveal delay={0.18}>
-            <div className="ambient-panel rounded-sm p-5 sm:p-7">
+            <div className="executive-panel p-5 sm:p-8">
               <ContactForm />
             </div>
           </Reveal>

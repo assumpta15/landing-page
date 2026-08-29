@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useEffectEvent, useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { navItems } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
@@ -10,15 +10,11 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleScroll = useEffectEvent(() => {
-    setIsScrolled(window.scrollY > 24);
-  });
-
   useEffect(() => {
-    handleScroll();
+    const handleScroll = () => setIsScrolled(window.scrollY > 24);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+  }, []);
 
   useEffect(() => {
     if (!isOpen) {
@@ -34,30 +30,35 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "border-b border-white/8 bg-[#0b151d]/82 backdrop-blur-xl"
+          ? "border-b border-white/8 bg-[#07111a]/92 backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-[1320px] items-center justify-between px-5 py-4 md:px-8">
+      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-5 py-4 md:px-8 lg:px-10">
         <Link
           href="#top"
-          className="flex items-center gap-3 text-sm font-semibold tracking-[0.32em] text-foreground"
+          className="flex items-center gap-4 text-sm font-semibold tracking-[0.32em] text-foreground"
           aria-label="Mark home"
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-sm border border-[var(--border)] bg-white/3 font-mono text-xs text-gold-light">
+          <span className="brand-mark flex h-11 w-11 items-center justify-center border border-[var(--border)] bg-white/[0.025] font-mono text-[0.68rem] text-gold-light">
             MK
           </span>
-          <span className="hidden font-mono text-xs uppercase tracking-[0.34em] text-foreground/88 sm:block">
-            Mark
+          <span className="hidden sm:block">
+            <span className="block font-mono text-[0.7rem] uppercase tracking-[0.34em] text-foreground/92">
+              Mark
+            </span>
+            <span className="mt-1 block font-mono text-[0.55rem] uppercase tracking-[0.24em] text-foreground/40">
+              Defense / Aerospace
+            </span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-9 lg:flex" aria-label="Primary">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-foreground/76 hover:text-foreground"
+              className="font-mono text-[0.66rem] uppercase tracking-[0.18em] text-foreground/58 hover:text-foreground"
             >
               {item.label}
             </Link>
@@ -66,7 +67,7 @@ export function Header() {
 
         <div className="hidden lg:block">
           <Button href="#contact" variant="primary">
-            Request Brief
+            Discuss Engagement
           </Button>
         </div>
 
@@ -82,7 +83,7 @@ export function Header() {
       </div>
 
       <div
-        className={`overflow-hidden border-t border-white/8 bg-[#0a151d]/96 backdrop-blur-xl transition-[max-height,opacity] duration-300 lg:hidden ${
+        className={`overflow-hidden border-t border-white/8 bg-[#07111a]/98 backdrop-blur-xl transition-[max-height,opacity] duration-300 lg:hidden ${
           isOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -102,7 +103,7 @@ export function Header() {
           ))}
           <div onClick={() => setIsOpen(false)}>
             <Button href="#contact" variant="primary" className="mt-3 justify-center">
-              Request Brief
+              Discuss Engagement
             </Button>
           </div>
         </nav>

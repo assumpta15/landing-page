@@ -7,69 +7,74 @@ import { heroStats } from "@/lib/data";
 export function Hero() {
   return (
     <section id="top" className="hero-surface site-shell min-h-screen pt-28 md:pt-32">
-      <div className="pointer-events-none absolute inset-x-0 top-[16%] h-px bg-gradient-to-r from-transparent via-[var(--gold)]/50 to-transparent opacity-50" />
+      <div className="hero-designation pointer-events-none absolute right-6 top-28 hidden text-right lg:block">
+        <p className="font-mono text-[0.6rem] uppercase tracking-[0.28em] text-foreground/24">
+          Independent advisory / 001
+        </p>
+        <p className="mt-2 font-mono text-[0.6rem] uppercase tracking-[0.28em] text-foreground/24">
+          Defense systems / acquisition / command
+        </p>
+      </div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
 
-      <div className="section-shell flex min-h-[calc(100vh-7rem)] flex-col justify-between gap-14 pb-10">
-        <div className="grid items-end gap-14 pt-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(300px,0.7fr)]">
-          <div className="max-w-[760px]">
+      <div className="section-shell flex min-h-[calc(100vh-7rem)] flex-col justify-end gap-14 pb-10">
+        <div className="grid items-end gap-12 pb-5 pt-20 lg:grid-cols-[minmax(0,1.4fr)_minmax(320px,0.6fr)] lg:gap-16">
+          <div className="max-w-[900px]">
             <Reveal>
-              <div className="mb-7 flex items-center gap-4">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-indicator" />
+              <div className="mb-8 flex items-center gap-4">
+                <span className="h-8 w-px bg-gold-light" />
                 <p className="technical-label text-gold-light">
-                  U.S. Navy, Ret. | 32 Years of Service
+                  Strategic Advisory / Defense & Aerospace
                 </p>
               </div>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <h1 className="editorial-title max-w-[10ch] text-foreground">
-                Command Experience. Contractor Results.
+              <h1 className="editorial-title max-w-[11ch] text-foreground">
+                Command clarity for mission-critical programs.
               </h1>
             </Reveal>
 
             <Reveal delay={0.18}>
-              <p className="body-copy mt-8 max-w-[38rem] text-[1.06rem] sm:text-[1.15rem]">
-                Three decades leading complex operations under real pressure -
-                now applied to defense and aerospace programs that need someone
-                who has actually run one, not just studied one.
+              <p className="body-copy mt-8 max-w-[42rem] text-[1.06rem] sm:text-[1.15rem]">
+                Senior leadership for defense and aerospace programs where
+                acquisition, systems integration, and execution must stay
+                aligned under pressure.
               </p>
             </Reveal>
 
             <Reveal delay={0.26}>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <Button href="#contact" variant="primary">
-                  Request a Capabilities Brief
+                  Request a Private Briefing
                 </Button>
                 <Button href="#service-record" variant="secondary">
-                  View Service Record
+                  Review Credentials
                 </Button>
               </div>
             </Reveal>
 
             <Reveal delay={0.34}>
               <p className="technical-label mt-7 text-foreground/58">
-                SAM.GOV REGISTERED | CLEARANCE AVAILABLE ON REQUEST
+                U.S. NAVY, RET. / 32 YEARS / CLEARANCE AVAILABLE ON REQUEST
               </p>
             </Reveal>
           </div>
 
           <Reveal delay={0.28}>
-            <aside className="ambient-panel relative overflow-hidden rounded-sm px-6 py-7 sm:px-7">
-              <div className="absolute inset-x-7 top-0 h-px bg-gradient-to-r from-transparent via-gold-light/80 to-transparent" />
+            <aside className="executive-panel relative overflow-hidden px-6 py-7 sm:px-7">
               <div className="flex items-center justify-between">
-                <SectionLabel label="Mission Status" />
+                <SectionLabel label="Engagement Profile" />
                 <ShieldCheck className="text-gold-light" size={18} />
               </div>
-              <p className="mt-5 max-w-[16ch] font-[family-name:var(--font-heading)] text-4xl leading-none text-foreground">
-                Available for select engagements.
+              <p className="mt-8 font-[family-name:var(--font-heading)] text-7xl font-semibold leading-none text-foreground">
+                32<span className="ml-2 text-2xl text-gold-light">YRS</span>
               </p>
-              <p className="mt-5 body-copy text-sm">
-                Advisory mandates, acquisition strategy support, and program
-                leadership assignments with real operational consequence.
+              <p className="mt-3 font-mono text-[0.65rem] uppercase tracking-[0.22em] text-foreground/45">
+                Command and operational service
               </p>
 
-              <div className="mt-7 space-y-4">
+              <div className="mt-8 space-y-4">
                 {heroStats.map((stat) => (
                   <div
                     key={stat.label}
@@ -78,7 +83,7 @@ export function Hero() {
                     <p className="technical-label text-foreground/52">
                       {stat.label}
                     </p>
-                    <p className="mt-2 text-lg text-foreground/90">
+                    <p className="mt-2 text-sm leading-relaxed text-foreground/84">
                       {stat.value}
                     </p>
                   </div>
@@ -89,18 +94,24 @@ export function Hero() {
         </div>
 
         <Reveal delay={0.38}>
-          <div className="flex flex-col gap-3 border-t border-[var(--border)] pt-6 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="technical-label">Current Bearing</p>
-              <p className="mt-2 font-mono text-xl uppercase tracking-[0.2em] text-gold-light">
-                118° | Acquisitions Strategy
-              </p>
-            </div>
+          <div className="hero-assurance-bar grid border-y border-white/10 sm:grid-cols-[1fr_1fr_1fr_auto]">
+            {[
+              ["01", "Program Leadership"],
+              ["02", "Acquisition Strategy"],
+              ["03", "Systems Integration"],
+            ].map(([code, label]) => (
+              <div key={code} className="flex items-center gap-4 border-b border-white/10 px-5 py-5 sm:border-b-0 sm:border-r">
+                <span className="font-mono text-xs text-gold-light">{code}</span>
+                <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-foreground/66">
+                  {label}
+                </span>
+              </div>
+            ))}
             <a
               href="#capabilities"
-              className="inline-flex items-center gap-2 text-sm text-foreground/68 hover:text-foreground"
+              className="inline-flex items-center justify-between gap-5 px-5 py-5 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-foreground/62 hover:text-foreground"
             >
-              Continue to capabilities
+              View mandate
               <ArrowDownRight size={16} />
             </a>
           </div>

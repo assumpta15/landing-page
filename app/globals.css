@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0c141b;
-  --background-secondary: #111e28;
-  --background-warm: #1a1917;
-  --foreground: #f1eee8;
-  --muted: #a9b0b5;
-  --gold: #b89a67;
-  --gold-light: #ceb482;
-  --border: rgba(184, 154, 103, 0.22);
-  --border-strong: rgba(255, 255, 255, 0.12);
-  --panel: rgba(17, 30, 40, 0.7);
-  --panel-warm: rgba(26, 25, 23, 0.82);
-  --red-indicator: #8e3d3d;
-  --shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+  --background: #071018;
+  --background-secondary: #0b1823;
+  --background-warm: #10191f;
+  --foreground: #edf0ee;
+  --muted: #9aa6ad;
+  --gold: #b8a36d;
+  --gold-light: #d0bd89;
+  --steel: #718795;
+  --border: rgba(208, 189, 137, 0.24);
+  --border-strong: rgba(220, 228, 231, 0.14);
+  --panel: rgba(10, 25, 36, 0.82);
+  --panel-warm: rgba(15, 25, 32, 0.9);
+  --red-indicator: #9b5b53;
+  --shadow: 0 34px 100px rgba(0, 0, 0, 0.36);
 }
 
 @theme inline {
@@ -37,8 +38,8 @@
 
 html {
   background:
-    radial-gradient(circle at top, rgba(30, 50, 67, 0.62), transparent 42%),
-    linear-gradient(180deg, #0f1c27 0%, #0c141b 28%, #111816 58%, #0c141b 100%);
+    radial-gradient(circle at 72% 0%, rgba(50, 76, 91, 0.32), transparent 34%),
+    linear-gradient(180deg, #091620 0%, #071018 38%, #08131b 100%);
 }
 
 body {
@@ -76,28 +77,6 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
-.page-noise {
-  opacity: 0.2;
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.04) 0, transparent 25%),
-    radial-gradient(circle at 80% 0%, rgba(184, 154, 103, 0.08) 0, transparent 18%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.014) 0,
-      rgba(255, 255, 255, 0.014) 1px,
-      transparent 1px,
-      transparent 5px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.012) 0,
-      rgba(255, 255, 255, 0.012) 1px,
-      transparent 1px,
-      transparent 4px
-    );
-  mix-blend-mode: soft-light;
-}
-
 .site-shell {
   position: relative;
   isolation: isolate;
@@ -105,7 +84,7 @@ textarea:focus-visible {
 
 .section-shell {
   position: relative;
-  width: min(100%, 1320px);
+  width: min(100%, 1440px);
   margin-inline: auto;
   padding-inline: clamp(1.25rem, 3vw, 2.5rem);
 }
@@ -129,31 +108,35 @@ textarea:focus-visible {
 }
 
 .editorial-title {
-  font-family: var(--font-heading), serif;
-  font-size: clamp(3rem, 7vw, 6.4rem);
-  line-height: 0.94;
-  letter-spacing: -0.04em;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(4.1rem, 8.4vw, 8.4rem);
+  font-weight: 600;
+  line-height: 0.84;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
   text-wrap: balance;
 }
 
 .section-title {
-  font-family: var(--font-heading), serif;
-  font-size: clamp(2.3rem, 5vw, 4.6rem);
-  line-height: 0.96;
-  letter-spacing: -0.035em;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(3rem, 5.8vw, 5.8rem);
+  font-weight: 600;
+  line-height: 0.88;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
   text-wrap: balance;
 }
 
 .body-copy {
   color: color-mix(in srgb, var(--foreground) 78%, var(--muted));
   font-size: clamp(1rem, 1.4vw, 1.18rem);
-  line-height: 1.78;
+  line-height: 1.72;
 }
 
 .technical-label {
   font-family: var(--font-mono), monospace;
-  font-size: 0.84rem;
-  letter-spacing: 0.28em;
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--foreground) 70%, var(--muted));
 }
@@ -166,37 +149,81 @@ textarea:focus-visible {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(14, 29, 41, 0.98), rgba(9, 18, 26, 0.9)),
-    radial-gradient(circle at 10% 10%, rgba(49, 75, 96, 0.22), transparent 30%);
+    radial-gradient(circle at 76% 32%, rgba(64, 91, 106, 0.24), transparent 25%),
+    linear-gradient(135deg, rgba(5, 15, 23, 0.99), rgba(10, 26, 37, 0.96) 55%, rgba(6, 16, 24, 0.99));
 }
 
 .hero-surface::before {
   content: "";
   position: absolute;
-  inset: -18% auto auto -10%;
-  width: 74rem;
-  height: 74rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  opacity: 0.5;
+  top: -30%;
+  right: 18%;
+  width: 1px;
+  height: 150%;
+  background: linear-gradient(180deg, transparent, rgba(208, 189, 137, 0.32), transparent);
+  transform: rotate(24deg);
+  transform-origin: center;
 }
 
 .hero-surface::after {
   content: "";
   position: absolute;
-  top: 18%;
-  right: -12%;
-  width: 54rem;
-  height: 54rem;
-  border-radius: 999px;
-  border: 1px solid rgba(184, 154, 103, 0.12);
-  opacity: 0.4;
+  inset: auto -12% -48% auto;
+  width: 62rem;
+  height: 62rem;
+  border: 1px solid rgba(113, 135, 149, 0.12);
+  border-radius: 50%;
+}
+
+.brand-mark {
+  clip-path: polygon(0 0, 84% 0, 100% 16%, 100% 100%, 0 100%);
+}
+
+.hero-assurance-bar {
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.executive-panel {
+  background: linear-gradient(145deg, rgba(13, 31, 43, 0.94), rgba(7, 18, 27, 0.98));
+  border: 1px solid rgba(220, 228, 231, 0.12);
+  box-shadow: var(--shadow);
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+}
+
+.executive-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-light), transparent 72%);
+}
+
+.dossier-surface {
+  background: linear-gradient(180deg, #0a151e, #08121a);
+}
+
+.principal-dossier {
+  position: relative;
+  background:
+    radial-gradient(circle at 90% 12%, rgba(113, 135, 149, 0.16), transparent 26%),
+    linear-gradient(150deg, #102433, #0a1822 62%, #07121a);
+}
+
+.principal-dossier::after {
+  content: "";
+  position: absolute;
+  top: -18%;
+  right: -28%;
+  width: 22rem;
+  height: 22rem;
+  border: 1px solid rgba(208, 189, 137, 0.12);
+  border-radius: 50%;
 }
 
 .capabilities-surface {
   background:
-    radial-gradient(circle at 8% 42%, rgba(184, 154, 103, 0.075), transparent 26%),
-    linear-gradient(180deg, rgba(14, 25, 34, 0.88), rgba(10, 18, 25, 0.96));
+    radial-gradient(circle at 8% 42%, rgba(113, 135, 149, 0.09), transparent 26%),
+    linear-gradient(180deg, #071018, #09151e);
 }
 
 .capabilities-surface::before {
@@ -248,6 +275,20 @@ textarea:focus-visible {
   box-shadow: var(--shadow);
 }
 
+.experience-surface {
+  background: linear-gradient(180deg, #0b1721, #08121a);
+}
+
+.experience-card {
+  min-height: 20rem;
+}
+
+.principles-surface {
+  background:
+    radial-gradient(circle at 10% 90%, rgba(184, 163, 109, 0.065), transparent 26%),
+    #071018;
+}
+
 .portrait-grid {
   background:
     linear-gradient(180deg, rgba(21, 48, 77, 0.88), rgba(7, 21, 38, 0.95)),
@@ -262,17 +303,18 @@ textarea:focus-visible {
 
 .contact-panel {
   background:
-    linear-gradient(180deg, rgba(7, 24, 38, 0.94), rgba(6, 18, 29, 0.96)),
-    radial-gradient(circle at 20% 0%, rgba(184, 154, 103, 0.12), transparent 24%);
+    linear-gradient(180deg, rgba(6, 19, 29, 0.98), rgba(4, 13, 20, 0.99)),
+    radial-gradient(circle at 20% 0%, rgba(184, 163, 109, 0.1), transparent 24%);
+  border-top: 1px solid rgba(208, 189, 137, 0.28);
 }
 
 .field-shell {
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.018);
 }
 
 .field-shell:hover {
-  border-color: rgba(184, 154, 103, 0.28);
+  border-color: rgba(208, 189, 137, 0.34);
 }
 
 .field-input {

@@ -15,13 +15,13 @@ function classNames(...values: Array<string | false | null | undefined>) {
 }
 
 const baseStyles =
-  "inline-flex min-h-14 items-center gap-3 rounded-[6px] border px-6 py-3 text-sm font-semibold tracking-[0.02em]";
+  "inline-flex min-h-14 items-center gap-3 border px-6 py-3 font-mono text-[0.67rem] font-medium uppercase tracking-[0.15em]";
 
 const variants = {
   primary:
-    "border-[rgba(206,180,130,0.9)] bg-gold px-7 text-[#10161b] hover:-translate-y-0.5 hover:bg-gold-light",
+    "border-[rgba(205,185,132,0.9)] bg-gold px-7 text-[#071018] hover:-translate-y-0.5 hover:bg-gold-light",
   secondary:
-    "border-white/16 bg-transparent text-foreground hover:-translate-y-0.5 hover:border-[var(--border)] hover:bg-white/4",
+    "border-white/16 bg-transparent text-foreground hover:-translate-y-0.5 hover:border-[var(--border)] hover:bg-white/[0.04]",
 };
 
 export function Button({

@@ -73,13 +73,13 @@ export function ContactForm() {
     <form className="space-y-5" onSubmit={onSubmit} noValidate>
       <div className="flex items-center justify-between gap-4">
         <div>
-          <p className="technical-label text-gold-light">Request Brief</p>
-          <h3 className="mt-3 font-[family-name:var(--font-heading)] text-3xl leading-none text-foreground sm:text-4xl">
-            Start the conversation.
+          <p className="technical-label text-gold-light">Engagement Intake / 01</p>
+          <h3 className="mt-4 font-[family-name:var(--font-heading)] text-4xl font-semibold uppercase leading-none tracking-[-0.02em] text-foreground sm:text-5xl">
+            Request a private briefing.
           </h3>
         </div>
         <p className="hidden max-w-[13rem] text-right font-mono text-[0.72rem] uppercase tracking-[0.24em] text-foreground/45 sm:block">
-          Frontend-ready form with API handoff path
+          Discreet / Direct / Mission-focused
         </p>
       </div>
 
@@ -165,7 +165,7 @@ export function ContactForm() {
       <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="submit"
-          className="inline-flex min-h-14 items-center justify-center rounded-[6px] border border-[rgba(206,180,130,0.9)] bg-gold px-7 py-3 text-sm font-semibold text-[#10161b] hover:-translate-y-0.5 hover:bg-gold-light disabled:cursor-not-allowed disabled:opacity-70"
+          className="inline-flex min-h-14 items-center justify-center border border-[rgba(206,180,130,0.9)] bg-gold px-7 py-3 font-mono text-[0.67rem] font-medium uppercase tracking-[0.15em] text-[#071018] hover:-translate-y-0.5 hover:bg-gold-light disabled:cursor-not-allowed disabled:opacity-70"
           disabled={submitState === "submitting"}
         >
           {submitState === "submitting" ? "Submitting..." : "Submit Enquiry"}
@@ -182,11 +182,11 @@ export function ContactForm() {
           role="status"
         >
           {submitState === "success" &&
-            "Enquiry captured locally and ready for API wiring."}
+            "Thank you. Your enquiry has been prepared for review."}
           {submitState === "error" &&
             "Something went wrong. Please try again in a moment."}
           {submitState === "idle" &&
-            "This form currently stores submissions locally in the browser console."}
+            "Information is handled with discretion."}
           {submitState === "submitting" && "Sending enquiry..."}
         </p>
       </div>

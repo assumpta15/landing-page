@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import {
-  Cormorant_Garamond,
+  Barlow_Condensed,
   IBM_Plex_Mono,
   Manrope,
 } from "next/font/google";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/lib/constants";
 import "./globals.css";
 
-const headingFont = Cormorant_Garamond({
+const headingFont = Barlow_Condensed({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "600", "700"],
 });
 
 const bodyFont = Manrope({

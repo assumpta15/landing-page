@@ -10,7 +10,6 @@ import { ServiceRecord } from "@/components/sections/ServiceRecord";
 export default function Home() {
   return (
     <div className="relative overflow-x-clip bg-background">
-      <div className="page-noise pointer-events-none fixed inset-0 z-0" />
       <Header />
       <main className="relative z-10">
         <Hero />
