@@ -31,6 +31,17 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# local/project backups and generated metadata
+.backup-*/
+.chatgpt*/
+.cleanup-*/
+.contact-*/
+.database-*/
+.experience-fix*/
+.palette-*/
+.service-record*/
+.openai/
+
 # vercel
 .vercel
 
@@ -41,3 +52,6 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+# Local Netlify folder
+.netlify

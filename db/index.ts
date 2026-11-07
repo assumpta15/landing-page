@@ -1,13 +1,15 @@
-import { env } from "cloudflare:workers";
-import { drizzle } from "drizzle-orm/d1";
-import * as schema from "./schema";
+/**
+ * Shared database configuration for Vercel deployments.
+ * Enquiry queries use the Neon serverless driver in db/enquiries.ts.
+ */
+export function getDatabaseUrl() {
+  const connectionString = process.env.DATABASE_URL;
 
-export function getDb() {
-  if (!env.DB) {
+  if (!connectionString) {
     throw new Error(
-      "Cloudflare D1 binding `DB` is unavailable. Set the `d1` field in .openai/hosting.json to `DB` or let your control plane inject the real binding values before using the database."
+      "DATABASE_URL is unavailable. Connect a Postgres database to this Vercel project.",
     );
   }
 
-  return drizzle(env.DB, { schema });
+  return connectionString;
 }

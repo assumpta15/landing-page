@@ -3,7 +3,7 @@ import { contactDetails } from "@/lib/data";
 
 export function Footer() {
   return (
-    <footer className="relative z-10 border-t border-white/8 bg-[#050c12]">
+    <footer className="relative z-10 border-t border-white/8 bg-[#0f1113]">
       <div className="section-shell flex flex-col gap-6 px-5 py-8 text-sm text-foreground/66 md:flex-row md:items-center md:justify-between md:px-8">
         <p className="font-mono uppercase tracking-[0.24em]">
           © 2026 Mark | Defense & Aerospace Consulting

@@ -30,11 +30,11 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "border-b border-white/8 bg-[#07111a]/92 backdrop-blur-xl"
+          ? "border-b border-white/8 bg-[#111416]/94 backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-5 py-4 md:px-8 lg:px-10">
+      <div className="mx-auto flex w-full max-w-[1480px] items-center justify-between px-5 py-4 md:px-8 lg:px-14">
         <Link
           href="#top"
           className="flex items-center gap-4 text-sm font-semibold tracking-[0.32em] text-foreground"
@@ -83,7 +83,7 @@ export function Header() {
       </div>
 
       <div
-        className={`overflow-hidden border-t border-white/8 bg-[#07111a]/98 backdrop-blur-xl transition-[max-height,opacity] duration-300 lg:hidden ${
+        className={`overflow-hidden border-t border-white/8 bg-[#111416]/98 backdrop-blur-xl transition-[max-height,opacity] duration-300 lg:hidden ${
           isOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >

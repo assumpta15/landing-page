@@ -12,7 +12,7 @@ export function PortraitFrame() {
         <span className="portrait-head absolute left-1/2 top-[8%] aspect-[0.82] h-[24%] -translate-x-1/2 rounded-[48%]" />
         <span className="portrait-shoulders absolute inset-x-0 bottom-0 h-[65%] rounded-t-[48%]" />
       </div>
-      <div className="absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-[#071018] via-[#071018]/84 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-[#111416] via-[#111416]/84 to-transparent" />
       <div className="absolute bottom-7 left-6 right-6 flex items-end justify-between gap-5">
         <div>
           <p className="font-[family-name:var(--font-editorial)] text-5xl leading-none text-foreground">
@@ -35,25 +35,40 @@ export function PortraitFrame() {
 
 export function OperationalFrame() {
   return (
-    <figure className="operational-frame relative aspect-[5/4] overflow-hidden border border-white/10">
-      <div className="operational-light absolute inset-0" />
-      <div className="absolute left-6 top-6 font-mono text-[0.58rem] uppercase tracking-[0.24em] text-foreground/44">
+    <figure className="operational-frame service-operational-frame relative overflow-hidden border border-white/10">
+      <div className="service-operational-image absolute inset-0" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#111416] via-[#111416]/20 to-transparent" />
+
+      <div className="absolute left-6 top-6 flex items-center gap-3 font-mono text-[0.58rem] uppercase tracking-[0.24em] text-foreground/56 sm:left-7 sm:top-7">
+        <span className="h-px w-8 bg-gold-light/70" />
         Operational image / 02
       </div>
-      <div className="absolute bottom-[18%] left-[9%] h-[38%] w-[22%] bg-[#182b35]/68" />
-      <div className="absolute bottom-[18%] left-[34%] h-[54%] w-[42%] border border-white/8 bg-[#0b1b25]/72" />
-      <div className="absolute bottom-[18%] right-[8%] h-[30%] w-[18%] bg-[#213640]/58" />
-      <div className="absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-[#071018] to-transparent" />
-      <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4">
-        <p className="font-[family-name:var(--font-editorial)] text-3xl leading-none text-foreground/92 sm:text-4xl">
-          On-site. In the room.
-        </p>
-        <p className="max-w-[8rem] text-right font-mono text-[0.55rem] uppercase leading-relaxed tracking-[0.2em] text-gold-light/75">
-          Working environment / replaceable media
-        </p>
+
+      <div className="absolute right-6 top-6 h-11 w-11 border-r border-t border-gold-light/60 sm:right-7 sm:top-7" />
+
+      <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-[#111416]/88 px-6 py-5 backdrop-blur-[2px] sm:px-7">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="font-[family-name:var(--font-editorial)] text-[2rem] leading-none text-foreground sm:text-[2.35rem]">
+              On-site. In the room.
+            </p>
+            <p className="mt-2 max-w-[32rem] text-sm leading-6 text-foreground/62">
+              Operational perspective shaped by complex programs, acquisition decisions, and accountable execution.
+            </p>
+          </div>
+          <div className="shrink-0 text-left sm:text-right">
+            <p className="font-mono text-[0.54rem] uppercase tracking-[0.22em] text-gold-light/78">
+              Current bearing / 118°
+            </p>
+            <p className="mt-1 font-mono text-[0.52rem] uppercase tracking-[0.2em] text-foreground/40">
+              Acquisition strategy
+            </p>
+          </div>
+        </div>
       </div>
+
       <figcaption className="sr-only">
-        Designed frame for future on-site or working photography.
+        Operational aerospace environment representing Mark&apos;s working context.
       </figcaption>
     </figure>
   );

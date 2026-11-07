@@ -19,7 +19,7 @@ const baseStyles =
 
 const variants = {
   primary:
-    "border-[rgba(205,185,132,0.9)] bg-gold px-7 text-[#071018] hover:-translate-y-0.5 hover:bg-gold-light",
+    "border-[rgba(205,185,132,0.9)] bg-gold px-7 text-[#111416] hover:-translate-y-0.5 hover:bg-gold-light",
   secondary:
     "border-white/16 bg-transparent text-foreground hover:-translate-y-0.5 hover:border-[var(--border)] hover:bg-white/[0.04]",
 };
